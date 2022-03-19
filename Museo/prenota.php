@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Document</title>
 
@@ -8,8 +9,14 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <link href="css/homeStyle.css" rel="stylesheet">
+
 </head>
+
 <body>
 
     <!-- Navigation -->
@@ -28,6 +35,42 @@
             </div>
         </div>
     </nav>
-    
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="card border-0 shadow my-5">
+            <div class="card-body p-5">
+
+                <div class="mb-3">
+                    <label for="InputNome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="InputNome">
+                </div>
+
+                <div class="mb-3">
+                    <label for="InputContatto" class="form-label">Contatto</label>
+                    <input type="text" class="form-control" id="InputContatto">
+                </div>
+
+                <div class="mb-3">
+                    <label for="InputNPersone" class="form-label">Numero di persone</label>
+                    <input type="text" class="form-control" id="InputNPersone">
+                </div>
+
+                <div class="mb-3">
+                    <label for="InputOrario" class="form-label">Orario</label>
+                    <input class="form-control" id="InputOrario">
+                </div>
+
+                <div class="mb-3">
+                    <button type="button" class="btn btn-light form-control">Aggiungi</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/palle.js"></script>
+
 </body>
+
 </html>
