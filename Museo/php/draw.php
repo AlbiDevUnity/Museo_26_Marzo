@@ -1,10 +1,10 @@
 <?php
 
-include 'php/database.php';
+include 'database.php';
 
-function DrawTable($query, $host, $dbname, $username = "root", $password = "")
+function DrawTable($query, $dbname, $host = "localhost", $username = "root", $password = "")
 {
-  $array = Get($query, $host, $dbname, $username, $password);
+  $array = Get($query, $dbname, $host, $username, $password);
 
   echo 
   '<table class="table table-hover">

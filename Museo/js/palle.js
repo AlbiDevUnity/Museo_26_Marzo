@@ -4,9 +4,5 @@ flatpickr(myInput,
 {
     enableTime: true,
     minDate: "today",
+    defaultDate: "today",
 });
-
-function AssignPostValues()
-{
-    
-}

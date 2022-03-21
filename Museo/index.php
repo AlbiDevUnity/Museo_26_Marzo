@@ -42,7 +42,7 @@
         <div class="card border-0 shadow my-5">
             <div class="card-body p-5">
                 <?php
-                    DrawTable("SELECT * FROM prenotazioni", "localhost", "museo");
+                    DrawTable("SELECT * FROM prenotazioni", "museo");
                 ?>
             </div>
         </div>

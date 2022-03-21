@@ -40,31 +40,33 @@
     <div class="container">
         <div class="card border-0 shadow my-5">
             <div class="card-body p-5">
+                <form method="POST" action="php/inserisci.php">
 
-                <div class="mb-3">
-                    <label for="InputNome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="InputNome">
-                </div>
+                    <div class="mb-3">
+                        <label for="InputNome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="InputNome" name="nome_P">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="InputContatto" class="form-label">Contatto</label>
-                    <input type="text" class="form-control" id="InputContatto">
-                </div>
+                    <div class="mb-3">
+                        <label for="InputContatto" class="form-label">Contatto</label>
+                        <input type="text" class="form-control" id="InputContatto" name="contatto_P">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="InputNPersone" class="form-label">Numero di persone</label>
-                    <input type="text" class="form-control" id="InputNPersone">
-                </div>
+                    <div class="mb-3">
+                        <label for="InputNPersone" class="form-label">Numero di persone</label>
+                        <input type="text" class="form-control" id="InputNPersone" name="nPersone_P">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="InputOrario" class="form-label">Orario</label>
-                    <input class="form-control" id="InputOrario">
-                </div>
+                    <div class="mb-3">
+                        <label for="InputOrario" class="form-label">Orario</label>
+                        <input class="form-control" id="InputOrario" name="orario_P">
+                    </div>
 
-                <div class="mb-3">
-                    <button type="button" class="btn btn-light form-control">Aggiungi</button>
-                </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-light form-control">Aggiungi</button>
+                    </div>
 
+                </form>
             </div>
         </div>
     </div>

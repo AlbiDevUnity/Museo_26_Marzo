@@ -2,7 +2,18 @@
 
     include 'extensions.php';
 
-    function Get($query, $host, $dbname, $username = "root", $password = "")
+    class Obj
+    {
+        public $parameter;
+        public $value;
+
+        public function  __construct($parameter, $value) {
+            $this->parameter = $parameter;
+            $this->value = $value;
+          }
+    }
+
+    function Get($query, $dbname, $host = "localhost", $username = "root", $password = "")
     {
         try 
         {
@@ -25,29 +36,35 @@
         {
             console_log(($e->getMessage()));
             die();
+            return null;
         }
     }
 
-    function Post($query, $host, $dbname, $bindParameters = array(), $username = "root", $password = "")
+    function Post($query, $dbname, $host = "localhost", $username = "root", $password = "", $bindParameters = array())
     {
         try 
         {
             $connection = new PDO('mysql:host=' . $host . ';dbname=' . $dbname, $username, $password);
             $result = $connection->prepare($query);
             
-            foreach($bindParameters as $parameter)
+            foreach($bindParameters as $obj)
             {
-                $result->bindParam($parameter, $_POST[$parameter]);
+                $result->bindParam( ":" . $obj->parameter, $obj->value);
             }
 
             $result->execute();
 
             $result = null;
             $connection = null;
+
+            return true;
         } 
         catch (PDOException $e) 
         {
             console_log(($e->getMessage()));
             die();
+            return false;
         }
+
+        return false;
     }
