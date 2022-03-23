@@ -19,31 +19,30 @@ console_log($bool);
 if ($bool) 
 {
     //fai vedere pagina verde successo
-    $array = Get("SELECT id FROM prenotazioni ORDER BY id LIMIT 1", "museo");
+    $array = Get("SELECT id FROM prenotazioni ORDER BY id DESC LIMIT 1", "museo");
+
 
     //generare codice per la modifica e l'eliminazione
-
+    $codice = "";
     do 
     {
+        $codice = generateRandomString();
+
         $codiceBool = Post(
             "INSERT INTO codici(codice, idPrenotazione) VALUES (:codice, :idPrenotazione)",
             "museo",
             bindParameters: array(
-                new Obj("codice", generateRandomString()),
+                new Obj("codice", $codice),
                 new Obj("idPrenotazione", $array[0]["id"])
             )
         );
     } while (!$codiceBool);
 
-    
-
-    header("Location: success.php");
-    exit();
+   GoToPage("../success.php", $codice, "Codice per modificare o eliminare la prenotazione");
 } 
 else 
 {
-    header("Location: fail.php");
-    exit();
+    GoToPage("../fail.php", "Dati inseriti sbagliati", "Errore!");
 }
 
 ?>

@@ -63,6 +63,7 @@
             $result = null;
             $connection = null;
 
+
             return true;
         } 
         catch (PDOException $e) 

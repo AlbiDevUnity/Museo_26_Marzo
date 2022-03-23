@@ -11,13 +11,17 @@ if(count($prenotazione) > 0)
 {
     //fare la parte di elimina
 
-    header("Location: success.php");
-    exit();
+    $bool = Post("DELETE FROM prenotazioni WHERE id=:id", "museo", bindParameters: array(
+        new Obj("id", $prenotazione[0]["id"])
+    ));
+
+    console_log($bool);
+
+    GoToPage("../success.php", "Eliminato con successo", "");
 } 
 else 
 {
-    header("Location: fail.php");
-    exit();
+    GoToPage("../fail.php", "Codice sbagliato", "Errore!");
 }
 
 ?>
