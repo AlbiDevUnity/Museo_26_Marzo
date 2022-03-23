@@ -13,12 +13,18 @@
           }
     }
 
-    function Get($query, $dbname, $host = "localhost", $username = "root", $password = "")
+    function Get($query, $dbname, $host = "localhost", $username = "root", $password = "", $bindParameters = array())
     {
         try 
         {
             $connection = new PDO('mysql:host=' . $host . ';dbname=' . $dbname, $username, $password);
             $result = $connection->prepare($query);
+
+            foreach($bindParameters as $obj)
+            {
+                $result->bindParam( ":" . $obj->parameter, $obj->value);
+            }
+            
             $result->execute();
 
             $array = array();
@@ -62,8 +68,8 @@
         catch (PDOException $e) 
         {
             console_log(($e->getMessage()));
-            die();
             return false;
+            //die();
         }
 
         return false;

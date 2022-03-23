@@ -14,6 +14,8 @@ $bool = Post(
     )
 );
 
+console_log($bool);
+
 if ($bool) 
 {
     //fai vedere pagina verde successo
@@ -32,10 +34,16 @@ if ($bool)
             )
         );
     } while (!$codiceBool);
+
+    
+
+    header("Location: success.php");
+    exit();
 } 
 else 
 {
-    //fai vedere pagina rosso fallimento
+    header("Location: fail.php");
+    exit();
 }
 
 ?>
