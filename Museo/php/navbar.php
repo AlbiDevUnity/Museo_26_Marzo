@@ -13,6 +13,9 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="cancellaPrenotazione.php">Cancella</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="modificaPrenotazione.php">Modifica</a>
+                    </li>
                 </ul>
             </div>
         </div>
