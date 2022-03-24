@@ -111,7 +111,7 @@
         </div>
     </div>
 
-    <script src="js/palle.js"></script>
+    <script src="js/flatpickr.js"></script>
 </body>
 
 </html>

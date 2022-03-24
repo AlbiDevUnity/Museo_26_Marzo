@@ -62,7 +62,7 @@
 
             $result = null;
             $connection = null;
-            
+
             return true;
         } 
         catch (PDOException $e) 
@@ -73,4 +73,35 @@
         }
 
         return false;
+    }
+
+    function CheckMaxPeople($orario, $nPersone)
+    {
+        $array = Get('SELECT SUM(nPersone) FROM prenotazioni WHERE YEAR(orario) = YEAR(:orario) AND MONTH(orario) = MONTH(:orario) 
+        AND DAY(orario) = DAY(:orario) AND HOUR(orario) = HOUR(:orario)', "museo", bindParameters: array(new Obj("orario", $orario)));
+        
+        $dates = Get('SELECT orario FROM prenotazioni WHERE YEAR(orario) = YEAR(:orario) AND MONTH(orario) = MONTH(:orario) 
+        AND DAY(orario) = DAY(:orario) AND HOUR(orario) = HOUR(:orario)', "museo", bindParameters: array(new Obj("orario", $orario)));
+
+        if(count($array) <= 0)
+        {
+            return true;
+        }
+        else
+        {
+            if(in_array($orario, $dates))
+            {
+                return false;
+            }
+
+            if(($array[0][0] + $nPersone) > 50)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
     }

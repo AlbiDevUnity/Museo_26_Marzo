@@ -3,18 +3,25 @@
 
 include 'database.php';
 
-$bool = Post(
-    "INSERT INTO prenotazioni(nome, contatto, nPersone, orario) VALUES (:nome, :contatto, :nPersone, :orario)",
-    "museo",
-    bindParameters: array(
-        new Obj("nome", $_POST["nome_P"]),
-        new Obj("contatto", $_POST["contatto_P"]),
-        new Obj("nPersone", $_POST["nPersone_P"]),
-        new Obj("orario", $_POST["orario_P"])
-    )
-);
+$bool = CheckMaxPeople($_POST["orario_P"], $_POST["nPersone_P"]);
 
-console_log($bool);
+if($bool)
+{
+    $bool = Post(
+        "INSERT INTO prenotazioni(nome, contatto, nPersone, orario) VALUES (:nome, :contatto, :nPersone, :orario)",
+        "museo",
+        bindParameters: array(
+            new Obj("nome", $_POST["nome_P"]),
+            new Obj("contatto", $_POST["contatto_P"]),
+            new Obj("nPersone", $_POST["nPersone_P"]),
+            new Obj("orario", $_POST["orario_P"])
+        )
+    );
+}
+else
+{
+    GoToPage("../fail.php", "Ora non disponibile", "Errore!");
+}
 
 if ($bool) 
 {
