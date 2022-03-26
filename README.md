@@ -57,8 +57,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Bisognava fare un programma in php, tutti hanno usato scorciatoie come ajax, io invece non sono tipo da scorciatoie quindi ho passato ore in agonia cercando soluzioni che per fortuna ho trovato.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
