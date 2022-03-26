@@ -66,8 +66,6 @@ Bisognava fare un programma in php, tutti hanno usato scorciatoie come ajax, io 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 ### Built With
 
 L'ho fatto usando ste robe
@@ -80,21 +78,14 @@ L'ho fatto usando ste robe
 * [ChartJS](https://www.chartjs.org/)
 * [Flaticon](https://www.flaticon.com/free-icons/museum)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Scarica e insatlla XAMPP, scarica questa repository; successivamente 
+Scarica e installa XAMPP, dopodichè scarica questa repository e spostala nella cartella htdocs di XAMPP. Avvia phpmyadmin e Apache. Infine importa il database in phpmyadmin e ora il sito dovrebbe funzionare correttamente
 <!-- ROADMAP -->
 ## Roadmap
 
 [Trello](https://trello.com/b/qZTjK7id/php-26-marzo)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 <!-- LICENSE -->
 ## License
