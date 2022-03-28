@@ -38,17 +38,10 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#built-with">Built With</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -58,8 +51,6 @@
 ## About The Project
 
 Bisognava fare un programma in php, tutti hanno usato scorciatoie come ajax, io invece non sono tipo da scorciatoie quindi ho passato ore in agonia cercando soluzioni che per fortuna ho trovato.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
 
