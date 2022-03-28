@@ -41,7 +41,7 @@
                     <input class="form-control" id="InputOrario">
                 </div>
 
-                <canvas id="myChart" height="400px", width="400px"></canvas>
+                <canvas id="myChart" height="50px" width="100%"></canvas>
             </div>
         </div>
     </div>
