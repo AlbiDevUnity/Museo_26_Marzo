@@ -25,31 +25,30 @@
     <div class="container">
         <div class="card border-0 shadow my-5">
 
-        <div class="mb-3">
-            <div class="d-inline-block">
+            <div class="mb-3">
+                <form>
+                    <label for="Codice" class="form-label">
+                        <?php
+                        session_start();
+                        echo $_SESSION["labelMsg"];
 
-                <label for="Codice" class="form-label">
-                <?php
-                    session_start();
-                    echo $_SESSION["labelMsg"];
-                    
-                    ?>
-                </label>
-                <input type="text" readonly class="form-control-plaintext" id="Codice" value=
-                <?php
+                        ?>
+                    </label>
+                    <input type="text" readonly class="form-control-plaintext" id="Codice" value=
+                    <?php
                     echo '"' . $_SESSION["message"] . '"';
                     
                     session_unset();
                     session_destroy();
                     ?>
-                >
+                    >
+                </form>
             </div>
-        </div>
 
             <div class="mb-3">
 
                 <!--immagine-->
-                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                <svg version="1.1" width="50%" height="50%" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
                     <circle style="fill:#D75A4A;" cx="25" cy="25" r="25" />
                     <polyline style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" points="16,34 25,25 34,16 " />
                     <polyline style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" points="16,16 25,25 34,34 " />

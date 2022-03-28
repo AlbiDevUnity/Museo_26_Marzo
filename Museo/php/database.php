@@ -46,7 +46,7 @@
         }
     }
 
-    function Post($query, $dbname, $host = "localhost", $username = "root", $password = "", $bindParameters = array())
+    function Post($query, $dbname, $host = "localhost", $username = "root", $password = "", $bindParameters = array(), &$exc = "")
     {
         try 
         {
@@ -67,9 +67,9 @@
         } 
         catch (PDOException $e) 
         {
-            console_log(($e->getMessage()));
+            $exc = $e;
             return false;
-            //die();
+            die();
         }
 
         return false;
@@ -83,18 +83,21 @@
         $dates = Get('SELECT orario FROM prenotazioni WHERE YEAR(orario) = YEAR(:orario) AND MONTH(orario) = MONTH(:orario) 
         AND DAY(orario) = DAY(:orario) AND HOUR(orario) = HOUR(:orario)', "museo", bindParameters: array(new Obj("orario", $orario)));
 
-        if(count($array) <= 0)
+        if(count($array) <= 0 && !in_array($orario, $dates))
         {
             return true;
         }
         else
         {
+            
+            $sum = intval($array[0][0]);
+            $nPersone = intval($nPersone);
+            
             if(in_array($orario, $dates))
             {
                 return false;
             }
-
-            if(($array[0][0] + $nPersone) > 50)
+            elseif(($sum + $nPersone) > 50)
             {
                 return false;
             }

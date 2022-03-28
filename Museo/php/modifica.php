@@ -3,6 +3,16 @@
 include 'database.php';
 
     $bool = CheckMaxPeople($_POST["orario_P"], $_POST["nPersone_P"]);
+    $exc = new PDOException();
+
+    if(strlen($_POST["nome_P"]) < 1)
+    {
+        GoToPage("../fail.php", "Inserire un nome valido min 1 lettera", "Errore!");
+    }
+    elseif(strlen($_POST["contatto_P"]) < 1)
+    {
+        GoToPage("../fail.php", "Inserire un contatto valido min 1 lettera", "Errore!");
+    }
 
     session_start();
 
@@ -18,7 +28,7 @@ include 'database.php';
     }
     else
     {
-        GoToPage("../fail.php", "Ora non disponibile", "Errore!");
+        GoToPage("../fail.php", "Il museo è pieno a quell'ora!", "Errore!");
     }
 
     session_unset();
@@ -30,6 +40,18 @@ include 'database.php';
     } 
     else
     {
-        GoToPage("../fail.php", "Non è stato modificato", "Errore!");
+        console_log($exc->getMessage());
+
+        if($exc->getCode() == "23000")
+        {
+            if(str_contains($exc->getMessage(), "nPersone"))
+            {
+                GoToPage("../fail.php", "Inserire un numero di persone valido! [1-5]", "Errore!");
+            }
+            elseif(str_contains($exc->getMessage(), "orario"))
+            {
+                GoToPage("../fail.php", "Orario già preso!", "Errore!");
+            }
+        }
     }
 ?>
